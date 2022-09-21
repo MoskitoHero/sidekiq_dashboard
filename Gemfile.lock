@@ -8,12 +8,14 @@ GEM
       connection_pool (>= 2.2.5)
       rack (~> 2.0)
       redis (>= 4.5.0, < 5)
+    webrick (1.7.0)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
 
 DEPENDENCIES
   sidekiq
+  webrick
 
 BUNDLED WITH
-   1.15.4
+   2.3.22
