@@ -1,8 +1,8 @@
 {
   "name": "Sidekiq Dashboard",
   "description": "Standalone application for the Sidekiq dashboard",
-  "website": "https://github.com/honeypotio/sidekiq_dashboard",
-  "repository": "https://github.com/honeypotio/sidekiq_dashboard",
+  "website": "https://github.com/MoskitoHero/sidekiq_dashboard",
+  "repository": "https://github.com/MoskitoHero/sidekiq_dashboard",
   "logo": "https://www.honeypot.io/logo.png",
   "success_url": "/",
   "keywords": [
