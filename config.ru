@@ -1,6 +1,10 @@
 # inspiration from
 # https://github.com/mperham/sidekiq/wiki/Monitoring#standalone-with-basic-auth
 
+require 'securerandom'
+
+File.open(".session.key", "w") {|f| f.write(SecureRandom.hex(32)) }
+
 require 'sidekiq'
 
 Sidekiq.configure_client do |config|
@@ -22,6 +26,8 @@ map '/' do
         Rack::Utils.secure_compare(::Digest::SHA256.hexdigest(password), ::Digest::SHA256.hexdigest(ENV["PASSWORD"]))
     end
   end
+
+  use Rack::Session::Cookie, secret: File.read(".session.key"), same_site: true, max_age: 86400
 
   run Sidekiq::Web
 end
